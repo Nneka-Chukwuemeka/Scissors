@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.gradient {
+	height: fit-content;
+	z-index: 3;
+	width: 100%;
+	max-width: 640px;
+	background-image: radial-gradient(
+			at 27% 37%,
+			hsla(215, 98%, 61%, 1) 0px,
+			transparent 0%
+		),
+		radial-gradient(at 97% 21%, rgba(214, 5, 5, 1) 0px, transparent 50%),
+		radial-gradient(at 52% 99%, rgba(214, 5, 5, 1) 0px, transparent 50%),
+		radial-gradient(at 10% 29%, rgba(234, 200, 31, 1) 0px, transparent 50%),
+		radial-gradient(at 97% 96%, rgba(6, 120, 8, 1) 0px, transparent 50%),
+		radial-gradient(at 33% 50%, rgba(234, 200, 31, 1) 0px, transparent 50%),
+		radial-gradient(at 79% 53%, rgba(234, 200, 31, 1) 0px, transparent 50%);
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 100%;
+	filter: blur(150px) saturate(250%);
+	top: 80px;
+	opacity: 0.15;
+}
+body {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+main {
+	display: flex;
+}
+
+.app {
+	@apply max-w-7xl w-full flex justify-center mx-auto px-6 sm:px-16 flex-col;
+}
+
+.nav {
+	@apply flex justify-between mt-2 sm:mt-5 pt-5 sm:pt-5;
+}

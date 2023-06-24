@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 export const metadata = {
 	title: 'Scissors',
 	description:
@@ -9,7 +8,6 @@ const layout = ({ children }) => {
 	return (
 		<html lang="en">
 			<body>
-			<Navbar/>
 				<main>{children}</main>
 			</body>
 		</html>
