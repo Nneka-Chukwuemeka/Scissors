@@ -1,7 +1,9 @@
 import React from 'react';
-
+import Sidenav from '@/components/Navbar';
 const Home = () => {
-	return <div>Home</div>;
+	return <div>
+   
+	</div>;
 };
 
 export default Home;
