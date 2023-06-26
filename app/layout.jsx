@@ -1,3 +1,6 @@
+import '@/styles/global.css';
+import Navbar from '@/components/Navbar';
+
 export const metadata = {
 	title: 'Scissors',
 	description:
@@ -8,11 +11,16 @@ const layout = ({ children }) => {
 	return (
 		<html lang="en">
 			<body>
-				<main>{children}</main>
+				{/* <div className="main">
+					<div className="gradient" />
+				</div> */}
+				<main>
+					<Navbar />
+					{children}
+				</main>
 			</body>
 		</html>
-		
 	);
 };
 
-export default layout;
+export default layout
