@@ -32,14 +32,9 @@ body {
 	box-sizing: border-box;
 }
 
-main {
-	display: flex;
-}
-
 .app {
-	@apply max-w-7xl w-full flex justify-center mx-auto px-6 sm:px-16 flex-col mt-2 sm:mt-5 pt-5 sm:pt-5;
+	@apply w-full flex flex-col mx-auto max-w-full;
 }
-
 .nav {
 	@apply flex justify-between;
 }
