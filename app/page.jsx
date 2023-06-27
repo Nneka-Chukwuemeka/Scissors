@@ -1,9 +1,11 @@
-import React from 'react';
-import Sidenav from '@/components/Navbar';
-const Home = () => {
-	return <div>
+import About from '@/components/About';
 
-	</div>;
+const Home = () => {
+	return (
+		<section className="mt-[3rem] lg:mt-[6rem] z-1 w-full">
+			<About />
+		</section>
+	);
 };
 
 export default Home;

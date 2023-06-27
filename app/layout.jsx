@@ -11,10 +11,7 @@ const layout = ({ children }) => {
 	return (
 		<html lang="en">
 			<body>
-				{/* <div className="main">
-					<div className="gradient" />
-				</div> */}
-				<main>
+				<main className="app">
 					<Navbar />
 					{children}
 				</main>
@@ -23,4 +20,4 @@ const layout = ({ children }) => {
 	);
 };
 
-export default layout
+export default layout;
