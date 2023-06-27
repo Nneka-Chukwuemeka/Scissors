@@ -38,3 +38,13 @@ body {
 .nav {
 	@apply flex justify-between;
 }
+
+.hero-fancy-text{
+	position:relative;
+}
+.hero-fancy-text::after{
+	content:url("../public/assets/fancy-underline.svg");
+	position: absolute;
+    left: 68px;
+    bottom: -40px;
+}
