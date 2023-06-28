@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
+import Button  from './Button'
 import line70 from '../public/assets/Line70.svg'
 import checkcircle from '../public/assets/checkcircle.svg'
 export default function Pricingplan() {
@@ -157,6 +158,10 @@ export default function Pricingplan() {
                </ul>
           </div>
          </section>
+		 <div className=' m-w mx-auto py-14 max-w-max space-x-3 md:-mt-[35rem] xl:-mt-[20rem]   '>  
+			<button className=' !text-primary py-3 px-7 rounded-full border border-primary ' > Get Customer Pricing</button> 
+			<button className=' bg-primary py-3 px-7 rounded-3xl font-semi-bold text-white'>Select Pricing</button>
+			 </div>
       </div>
     </div>
   )
