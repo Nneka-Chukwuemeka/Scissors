@@ -12,6 +12,9 @@ module.exports = {
 				'gradient-conic':
 					'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
 				linear: 'linear-gradient(180deg, #1E3448 99.99%, rgba(30, 52, 72, 0) 100%)',
+				container:
+					'linear-gradient(180deg, #1E3448 99.99%, rgba(30, 52, 72, 0.00) 100%)',
+				/* 	vector: 'url("@/assets/Vector.svg")', */
 			},
 			colors: {
 				primary: 'rgba(0, 101, 254, 1)',

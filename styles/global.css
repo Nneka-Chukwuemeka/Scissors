@@ -39,12 +39,58 @@ body {
 	@apply flex justify-between;
 }
 
-.hero-fancy-text{
-	position:relative;
+.hero-fancy-text {
+	position: relative;
 }
-.hero-fancy-text::after{
-	content:url("../public/assets/fancy-underline.svg");
+.hero-fancy-text::after {
+	content: url('../public/assets/fancy-underline.svg');
 	position: absolute;
-    left: 68px;
-    bottom: -40px;
+	left: 68px;
+	bottom: -40px;
+}
+.input {
+	@apply rounded-[6px] border-primary border w-full py-[0.3rem] px-[0.75rem] h-[3.4375rem];
+}
+input::placeholder,
+select {
+	color: rgba(0, 101, 254, 1);
+	line-height: 1.125rem;
+	font-size: 0.75rem;
+}
+
+.contain {
+	background: 
+		linear-gradient(180deg, #1e3448 99.99%, rgba(30, 52, 72, 0) 100%)
+	);
+	z-index: 3;
+}
+
+@media only screen and (min-width: 768px) {
+.contain::before {
+  content: "";
+  position: absolute;
+  left: -60px;
+  width: 52.82419rem;
+  height: 100%;
+  background-image: url('../public/assets/Vector.svg');
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity: 70%;
+}
+.back::before{
+ content: "";
+  position: absolute;
+  top: 120px;
+  left: -60px;
+  width: 20rem;
+  height: 100%;
+  transform: rotate(360deg);
+  background-image: url('../public/assets/Vector.svg');
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity:10%;
+background: 
+		linear-gradient(180deg, #1e3448 99.99%, rgba(30, 52, 72, 0) 100%)
+	);
+}
 }
