@@ -13,6 +13,7 @@ export default function Navbar() {
 		<div className=" fixed w-full h-20 shadow-xl z-[100] bg-slate-200 ">
 			<section className="  flex justify-between items-center w-full h-full px-16 2xl:px-16 ">
 				<div className=" ">
+					<Link href="/">
 					<Image
 						className=" "
 						src={Logo}
@@ -20,6 +21,8 @@ export default function Navbar() {
 						height={50}
 						width={120}
 					/>
+					</Link>
+				
 				</div>
 				<ul className=" list-none hidden xl:flex  space-x-10 text-xl ">
 					<li className=" text-[#0065FE]">
