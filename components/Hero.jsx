@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <header className="pt-[4rem] pb-[2rem] px-4">
         <div className="w-full max-w-[60rem] mx-auto text-center">
-            <h1 className="text-[48px] font-semibold leading-[96px]">Optimize Your Online Experience with Our Advanced <span className="text-primary hero-fancy-text whitespace-nowrap">URL Shortening</span> Solution</h1>
+            <h1 className="text-[40px] md:text-[48px] font-semibold leading-[60px] md:leading-[96px]">Optimize Your Online Experience with Our Advanced <span className="text-primary hero-fancy-text whitespace-nowrap">URL Shortening</span> Solution</h1>
             <p className="text-[18px] leading-[28px] pt-10 max-w-[45rem] mx-auto">Personalize your shortened URLs to align with your brand identity. Utilize custom slugs, branded links, and domain customization options to reinforce your brand presence and enhance user engagement.</p>
             <div className="max-w-max flex mx-auto py-14">
                 <Button>Sign Up</Button>
