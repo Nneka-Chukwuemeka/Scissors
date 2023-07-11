@@ -51,7 +51,7 @@ const Faqs = () => {
 
     return (
         <section>
-            <div className='mx-auto w-full max-w-[768px] pt-[3rem] pb-[8rem]'>
+            <div className='mx-auto w-full max-w-[768px] pt-[3rem] pb-[8rem] px-4'>
                 <header className='grid place-items-center pb-14'>
                     <div className='flex gap-x-4'>
                         <Image src={faqs_line} alt="Faqs Line" />
