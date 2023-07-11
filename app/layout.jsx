@@ -1,6 +1,6 @@
 import '@/styles/global.css';
+import React from 'react';
 import Navbar from '@/components/Navbar';
-
 export const metadata = {
 	title: 'Scissors',
 	description:
@@ -8,14 +8,17 @@ export const metadata = {
 };
 
 const layout = ({ children }) => {
+	
 	return (
 		<html lang="en">
+			
 			<body>
 				<main className="app">
-					<Navbar />
+				
 					{children}
 				</main>
 			</body>
+			
 		</html>
 	);
 };
