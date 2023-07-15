@@ -65,6 +65,11 @@ select {
 	z-index: 3;
 }
 
+ hr {
+	border-top: 1px solid #A0B1C0;
+ }
+
+
 @media only screen and (min-width: 768px) {
 .contain::before {
   content: "";

@@ -4,25 +4,30 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import Logo from '../public/assets/Logo.svg';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import { useRouter } from 'next/navigation';
 export default function Navbar() {
 	const [nav, setNav] = useState(false);
 	const handleNav = () => {
 		setNav(!nav);
 	};
+	const router = useRouter();
+	const handleRouting = () => {
+		router.push('/sign-up');
+	};
+	const isLoggedIn = false;
 	return (
 		<div className=" fixed w-full h-20 shadow-xl z-[100] bg-slate-200 ">
 			<section className="  flex justify-between items-center w-full h-full px-16 2xl:px-16 ">
 				<div className=" ">
 					<Link href="/">
-					<Image
-						className=" "
-						src={Logo}
-						alt="/"
-						height={50}
-						width={120}
-					/>
+						<Image
+							className=" "
+							src={Logo}
+							alt="/"
+							height={50}
+							width={120}
+						/>
 					</Link>
-				
 				</div>
 				<ul className=" list-none hidden xl:flex  space-x-10 text-xl ">
 					<li className=" text-[#0065FE]">
@@ -43,13 +48,23 @@ export default function Navbar() {
 						<Link href="/">FAQs</Link>
 					</li>
 				</ul>
-
-				<ul className=" flex px-12  space-x-8">
-					<button>Login</button>
-					<button className=" hidden md:block rounded-3xl bg-[#0065FE] text-white py-2 px-3 ">
-						Try for free
-					</button>
-				</ul>
+				{isLoggedIn ? (
+					<ul className=" flex px-12  space-x-8">
+						<button>Logout </button>
+						<button className=" hidden md:block rounded-3xl bg-[#0065FE] text-white py-2 px-3 ">
+							profile
+						</button>
+					</ul>
+				) : (
+					<ul className=" flex px-12  space-x-8">
+						<button>Login</button>
+						<Link
+							href="/sign-up"
+							className=" hidden md:block rounded-3xl bg-[#0065FE] text-white py-2 px-3 ">
+							Try for free
+						</Link>
+					</ul>
+				)}
 				<div className="xl:hidden">
 					<AiOutlineMenu size={25} onClick={handleNav} />
 				</div>
@@ -117,11 +132,12 @@ export default function Navbar() {
 
 							<Link href="/">
 								<li className=" py-10 text-xl mt-[-2rem]">
-									<button
+									<Link
+										href="/sign-up"
 										onClick={() => setNav(false)}
 										className=" rounded-3xl bg-[#0065FE] text-white py-3 px-4">
 										Try for free
-									</button>
+									</Link>
 								</li>
 							</Link>
 						</ul>
@@ -131,4 +147,3 @@ export default function Navbar() {
 		</div>
 	);
 }
-
