@@ -1,4 +1,7 @@
 import Image from 'next/image';
+import React,{useEffect} from 'react'
+import AOS from "aos";
+import "aos/dist/aos.css";
 const AboutCard = ({ type }) => {
 	let heading,
 		headingTwo,
@@ -58,11 +61,14 @@ const AboutCard = ({ type }) => {
 			desc =
 				'Receive data on the usage of either your shortened URL, custom URLs or generated QR codes. Embedded to monitor progress.';
 			icon = '/assets/activity.svg';
-		}
+		} 
 	};
 	handleType(type);
 
 	let style = 'border-l-2 border-border pl-1 text-2rem';
+		useEffect(() => {
+		  AOS.init({ duration: 1000 });
+		}, []);
 	return (
 		<section
 			className={

@@ -1,6 +1,7 @@
 'use client';
-
-import { useState } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useState, useEffect } from 'react';
 import Button from './Button';
 import { LiaCutSolid } from 'react-icons/lia';
 
@@ -9,8 +10,12 @@ const Form = () => {
 	const handlesummit=(event)=>{
 		event.preventDefault();  
 	}
+
+	useEffect(() => {
+		AOS.init({ duration: 1000 });
+	  }, []);
 	return (
-		<section className="flex flex-col p-[2.5rem] lg:p-[5.2rem] justify-center rounded-[12px] bg-white w-full lg:w-[50%]">
+		<section data-aos="fade-up" className="flex flex-col p-[2.5rem] lg:p-[5.2rem] justify-center rounded-[12px] bg-white w-full lg:w-[50%]">
 			<form onSubmit={handlesummit} className="flex flex-col gap-[1rem]">
 				<div className="form-group w-full">
 					<input 

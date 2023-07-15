@@ -1,6 +1,7 @@
 "use client";
-
-import React, { useState } from 'react'
+import AOS from "aos";
+import "aos/dist/aos.css";
+import React, { useEffect,useState } from 'react'
 import faqs_line from '../public/assets/faqs-line.svg'
 import Image from 'next/image'
 
@@ -48,9 +49,11 @@ const Faqs = () => {
     const [state, setState] = useState()
 
     const stateToggle = (val) => state === val ? setState(null) : setState(val)
-
+    useEffect(() => {
+        AOS.init({ duration: 1000 });
+      }, []);
     return (
-        <section>
+        <section data-aos="fade-up">
             <div className='mx-auto w-full max-w-[768px] pt-[3rem] pb-[8rem] px-4'>
                 <header className='grid place-items-center pb-14'>
                     <div className='flex gap-x-4'>

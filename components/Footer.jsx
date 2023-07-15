@@ -1,12 +1,17 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import Image from 'next/image';
 import divider from '@/public/assets/divider.svg'
 import { FaFacebook,FaInstagram,FaTwitter,FaLinkedin } from 'react-icons/fa';
 import logofooter from '@/public/assets/Logof.svg'
+import AOS from "aos";
+import "aos/dist/aos.css";
 export default function Footer() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   return (
-    <div>
-        <section className=' '>
+    <div data-aos="fade-up">
+        <section className=''>
          <div>
          <Image
 						className=" p-4 ml-6 xl:ml-[10rem] "

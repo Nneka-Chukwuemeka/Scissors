@@ -1,5 +1,5 @@
 import AboutCard from './AboutCard';
-
+import React,{useEffect} from 'react'
 const About = () => {
 	return (
 		<section className="flex flex-col py-[3.5rem] px-8 lg:px-16 gap-8 w-full ">
