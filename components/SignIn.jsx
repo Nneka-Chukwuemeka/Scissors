@@ -23,8 +23,10 @@ const SignIn = ({ type }) => {
 		}
 	};
 	return (
-		<section className="pt-10 flex flex-col md:justify-center px-7 md:w-[560px] md:mx-auto">
-			<h3 className="pb-4 text-center">{type ? type : 'Sign Up with'}</h3>
+		<section className="pt-10 flex flex-col md:justify-center px-7 md:w-[560px] md:mx-auto mb-10">
+			<h3 className="pb-4 text-center text-bold">
+				{type ? type : 'Sign Up with'}
+			</h3>
 			<div className="flex flex-col py-3 gap-3 w-full md:flex-row md:gap-10  md:justify-center">
 				<Button className=" w-full md:w-[50%] rounded-[12px]">
 					Google

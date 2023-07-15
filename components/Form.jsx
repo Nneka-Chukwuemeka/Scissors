@@ -1,17 +1,22 @@
 'use client';
 
+import { useState } from 'react';
 import Button from './Button';
 import { LiaCutSolid } from 'react-icons/lia';
 
 const Form = () => {
+	const [curent, setcurrent] = useState('');
+	const handlesummit=(event)=>{
+		event.preventDefault();  
+	}
 	return (
 		<section className="flex flex-col p-[2.5rem] lg:p-[5.2rem] justify-center rounded-[12px] bg-white w-full lg:w-[50%]">
-			<form onSubmit={() => {}} className="flex flex-col gap-[1rem]">
+			<form onSubmit={handlesummit} className="flex flex-col gap-[1rem]">
 				<div className="form-group w-full">
-					<input
+					<input 
 						type="text"
 						placeholder="Paste your URL"
-						value=""
+					     value=''
 						className="input rounded-[6px] border-primary border w-full py-[0.3rem] px-[0.75rem]"
 					/>
 				</div>

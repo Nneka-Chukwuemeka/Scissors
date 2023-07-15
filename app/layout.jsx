@@ -1,7 +1,6 @@
 import '@/styles/global.css';
-import Navbar from '@/components/Navbar';
+import React from 'react';
 import { AuthUserProvider } from '@/context/auth';
-
 export const metadata = {
 	title: 'Scissors',
 	description:
@@ -13,10 +12,7 @@ const layout = ({ children, pageProps }) => {
 		<html lang="en">
 			<body>
 				<AuthUserProvider {...pageProps}>
-					<main className="app">
-						<Navbar />
-						{children}
-					</main>
+					<main className="app">{children}</main>
 				</AuthUserProvider>
 			</body>
 		</html>
