@@ -42,22 +42,7 @@ const Home = () => {
        </div>)}
 	
 	</>
-					<Pricingplan />
-					<Container className="w-full flex justify-center items-center p-[1rem] md:p-[2.5rem] h-[25rem] lg:h-[32.6875rem] bg-container">
-						<Form />
-					</Container>
-					<Faqs />
-					<Container className="w-full flex justify-center items-center p-[1rem] md:p-[2.5rem] h-[25rem] bg-container">
-						<Getstarted />
-					</Container>
-					<Footer />
-				</section>
-			) : (
-				<div className="w-screen bg-black  h-screen left-0 top-0 flex flex-col justify-center">
-					<div className="loader  mx-auto w-10/12"></div>
-				</div>
-			)}
-		</>
+					
 	);
 };
 
