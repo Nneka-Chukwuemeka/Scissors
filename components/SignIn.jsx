@@ -11,9 +11,11 @@ const SignIn = ({ type }) => {
 	const [error, setError] = useState(null);
 	const { register, loading } = useAuth();
 	const router = useRouter();
-	const handleSubmit = (e) => {
+	const handleSubmit = (event) => {
 		setError(null);
-		e.preventDefault();
+			event.preventDefault();  
+	
+	
 		try {
 			const authUser = register(email, password, username);
 			console.log(authUser);
@@ -72,6 +74,7 @@ const SignIn = ({ type }) => {
 						/>
 					</div>
 					<Button
+					   onSubmit={handleSubmit}
 						className="flex justify-center items-center"
 						type="submit">
 						Sign up with email
