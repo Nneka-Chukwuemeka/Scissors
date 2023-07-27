@@ -1,6 +1,5 @@
 'use client';
 import React,{useEffect} from 'react'
-
 import Image from 'next/image';
 import divider from '@/public/assets/divider.svg';
 import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa';
@@ -114,7 +113,7 @@ export default function Footer() {
 						/>
 					</li>
 					<li>
-						Security{' '}
+						Security
 						<Image
 							className=" top-[-1.5rem] relative ml-[4rem]  "
 							src={divider}
