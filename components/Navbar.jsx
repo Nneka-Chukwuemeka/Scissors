@@ -39,7 +39,7 @@ export default function Navbar() {
 					</li>
 
 					<li className="">
-						<Link href="/">Pricing</Link>
+						<Link href="/Pricingplan">Pricing</Link>
 					</li>
 					<li>
 						<Link href="/">Anayltics</Link>

@@ -31,7 +31,9 @@ const Home = () => {
     }
 	}, []);
 
-	
+	useEffect(()=>{
+		sessionStorage.setItem('loading', loading.toString());
+	},[loading]);
 	return (
 		<>
 			{loading ? (
