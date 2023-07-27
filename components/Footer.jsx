@@ -1,7 +1,6 @@
 'use client';
 import React,{useEffect} from 'react'
 
-import React, { useEffect } from 'react';
 import Image from 'next/image';
 import divider from '@/public/assets/divider.svg';
 import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa';

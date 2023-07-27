@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import About from '@/components/About';
 import Pricingplan from '@/components/Pricingplan';
 import Hero from '@/components/Hero';
@@ -12,9 +12,10 @@ import Footer from '@/components/Footer';
 import Faqs from '@/components/Faqs';
 import Sidebar from '@/components/dashboard/Sidebar';
 const Home = () => {
+
 	const [loading, setLoading] = useState(false);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		setTimeout(() => {
 			setLoading(true);
 		}, 3000);
@@ -22,16 +23,16 @@ const Home = () => {
 		const loaderState = sessionStorage.getItem('loading');
 
     if (loaderState) {
-      // If the loader state exists in sessionStorage, set the loaderVisible state accordingly
+    
       setLoading(loaderState === 'true');
     } else {
-      // If the loader state does not exist in sessionStorage, set the default value (true in this case)
+    
       sessionStorage.setItem('loading', 'false');
     }
 	}, []);
 
 	useEffect(() => {
-		// Save the loaderVisible state in sessionStorage whenever it changes
+
 		sessionStorage.setItem('loading', loading.toString());
 	  }, [loading]);
 	
