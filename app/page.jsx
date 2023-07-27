@@ -53,7 +53,7 @@ const Home = () => {
 						<Getstarted />
 					</Container>
 					<Footer />
-					<Sidebar />
+					
 				</section>
 			) : (
 				<div className="w-screen bg-black  h-screen left-0 top-0 flex flex-col justify-center">
