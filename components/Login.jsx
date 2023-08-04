@@ -4,15 +4,25 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import {UserAuth} from '@/context/Authcontext'
 export default function Login() {
     const [email, setEmail] = useState('');
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 	const [error, setError] = useState(null);
 	const router = useRouter();
+	const { signIn } = UserAuth();
 	const handleSubmit = async  (event) => {
 			event.preventDefault();  
-	
+			setError('')
+			try {
+			  await signIn(email, password)
+			  router.push('/dashboard')
+			} catch (e) {
+			  setError(e.message)
+			  console.log(e.message)
+			}
+		  
 	};
   return (
     <div>

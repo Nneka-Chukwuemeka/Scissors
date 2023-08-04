@@ -19,7 +19,7 @@ const SignIn = ({ type }) => {
 				}catch(e){
 				  setError(e.message)
 				  console.log(e.message)
-				}diconnect
+				}
 		  
 
 	};
