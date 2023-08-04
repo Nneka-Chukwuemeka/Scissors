@@ -1,6 +1,7 @@
+'use client';
 import '@/styles/global.css';
 import React from 'react';
-import { AuthUserProvider } from '@/context/auth';
+import {AuthContextProvider} from '../context/Authcontext'
 export const metadata = {
 	title: 'Scissors',
 	description:
@@ -11,9 +12,9 @@ const layout = ({ children, pageProps }) => {
 	return (
 		<html lang="en">
 			<body>
-				<AuthUserProvider {...pageProps}>
+				<AuthContextProvider {...pageProps}>
 					<main className="app">{children}</main>
-				</AuthUserProvider>
+				</AuthContextProvider>
 			</body>
 		</html>
 	);

@@ -14,6 +14,8 @@ const firebaseConfig = {
 
 export const app =
 	getApps().length === 0 ? initializeApp(firebaseConfig) : getApp()[0];
+	export const auth = getAuth(app);
+
 // const provider = new EmailAuthProvider();
 // if (getApps().length < 1) {
 // 	initializeApp(firebaseConfig);

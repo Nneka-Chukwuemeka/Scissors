@@ -10,7 +10,6 @@ import Navbar from '@/components/Navbar';
 import Getstarted from '@/components/Getstarted';
 import Footer from '@/components/Footer';
 import Faqs from '@/components/Faqs';
-import Sidebar from '@/components/dashboard/Sidebar';
 const Home = () => {
 
 	const [loading, setLoading] = useState(false);
@@ -51,7 +50,7 @@ const Home = () => {
 						<Getstarted />
 					</Container>
 					<Footer />
-					<Sidebar />
+				
 				</section>
 			) : (
 				<div className="w-screen bg-black  h-screen left-0 top-0 flex flex-col justify-center">

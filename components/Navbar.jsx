@@ -39,7 +39,7 @@ export default function Navbar() {
 					</li>
 
 					<li className="">
-						<Link href="/Pricingplan">Pricing</Link>
+						<Link href='/Pricingplan' >pricing</Link>
 					</li>
 					<li>
 						<Link href="/">Anayltics</Link>
@@ -54,10 +54,13 @@ export default function Navbar() {
 						<button className=" hidden md:block rounded-3xl bg-[#0065FE] text-white py-2 px-3 ">
 							profile
 						</button>
-					</ul>
+					</ul>  
 				) : (
 					<ul className=" flex px-12  space-x-8">
+						<Link href='/login'>
 						<button>Login</button>
+						</Link>
+		
 						<Link
 							href="/sign-up"
 							className=" hidden md:block rounded-3xl bg-[#0065FE] text-white py-2 px-3 ">

@@ -40,7 +40,9 @@ export default function useFirbaseAuth() {
 		signInWithEmailAndPassword(auth, email, password, username);
 	};
 	const register = async (email, password) => {
-		await createUserWithEmailAndPassword(auth, email, password);
+
+		const user=	await createUserWithEmailAndPassword(auth, email, password);
+	
 	};
 
 	const signOut = () => auth.signOut().then(clear);
