@@ -2,8 +2,8 @@
 import Button from './Button';
 import Link from 'next/link';
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import {UserAuth} from '@/context/Authcontext'
+import { useRouter } from 'next/navigation';
 const SignIn = ({ type }) => {
 	const [email, setEmail] = useState('');
 	const [username, setUsername] = useState('');
@@ -15,11 +15,11 @@ const SignIn = ({ type }) => {
 			event.preventDefault();  
 			try{
 				await createUser(email,password);
-				return (<Link  	href="/login"></Link>);
+				router.push('/login')
 				}catch(e){
 				  setError(e.message)
 				  console.log(e.message)
-				}
+				}diconnect
 		  
 
 	};
