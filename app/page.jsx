@@ -36,6 +36,7 @@ const Home = () => {
 	return (
 		<>
 			{loading ? (
+				
 				<section className="">
 					<Navbar />
 					<Hero />
@@ -52,6 +53,7 @@ const Home = () => {
 					<Footer />
 				
 				</section>
+				    
 			) : (
 				<div className="w-screen bg-black  h-screen left-0 top-0 flex flex-col justify-center">
 					<div className="loader  mx-auto w-10/12"></div>

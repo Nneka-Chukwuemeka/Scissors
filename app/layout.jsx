@@ -7,14 +7,16 @@ export const metadata = {
 	description:
 		'Scissor is a simple tool which makes URLs as short as possible',
 };
-
 const layout = ({ children, pageProps }) => {
+
 	return (
 		<html lang="en">
 			<body>
+			
 				<AuthContextProvider {...pageProps}>
 					<main className="app">{children}</main>
 				</AuthContextProvider>
+			
 			</body>
 		</html>
 	);

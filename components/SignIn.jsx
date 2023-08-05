@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { useState } from 'react';
 import {UserAuth} from '@/context/Authcontext'
 import { useRouter } from 'next/navigation';
+
+
 const SignIn = ({ type }) => {
 	const [email, setEmail] = useState('');
 	const [username, setUsername] = useState('');
@@ -11,6 +13,7 @@ const SignIn = ({ type }) => {
 	const [error, setError] = useState(null);
 	const router = useRouter();
 	const { createUser } = UserAuth();
+
 	const handleSubmit = async (event) => {
 			event.preventDefault();  
 			try{
@@ -20,9 +23,8 @@ const SignIn = ({ type }) => {
 				  setError(e.message)
 				  console.log(e.message)
 				}
-		  
-
 	};
+
 	return (
 		<section className="pt-10 flex flex-col md:justify-center px-7 md:w-[560px] md:mx-auto mb-10">
 			<h3 className="pb-4 text-center text-bold">
