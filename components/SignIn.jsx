@@ -39,12 +39,10 @@ const SignIn = ({ type }) => {
 			<div className="flex flex-col py-3 gap-3 w-full md:flex-row md:gap-10  md:justify-center"> 
 
 		
-				<Button onClick={handlegooglesignin}  className=" w-full md:w-[50%] rounded-[12px]">
+				<Button onClick={handlegooglesignin}  className=" w-full md:w-[100%] rounded-[12px]">
 					Google
 				</Button>
-				<Button className="rounded-[10px] w-full md:w-[50%] ">
-					Apple
-				</Button>
+				
 			</div>
 			<div className="flex justify-center items-center gap-2">
 				<hr className="w-full" />
