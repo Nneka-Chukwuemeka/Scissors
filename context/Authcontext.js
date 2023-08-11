@@ -4,7 +4,9 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  signInWithPopup,
   onAuthStateChanged,
+  GoogleAuthProvider,
 } from 'firebase/auth';
 import { auth } from '../fitebase/config';
 
@@ -12,9 +14,9 @@ const UserContext = createContext();
 
 
 export const AuthContextProvider = ({ children }) => {
-  const [user, setUser] = useState({});
+  const [emailuser, setemailUser] = useState({});
 
-  const createUser = (email, password) => {
+  const createemailUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
@@ -22,6 +24,12 @@ export const AuthContextProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password)
    }
 
+
+   
+  const googleSignIn = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider);
+  };
   const logout = () => {
       return signOut(auth)
   }
@@ -29,7 +37,7 @@ export const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       
-      setUser(currentUser);
+      setemailUser(currentUser);
     });
     return () => {
       unsubscribe();
@@ -37,7 +45,7 @@ export const AuthContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ createUser, user, logout, signIn }}>
+    <UserContext.Provider value={{  createemailUser, emailuser, logout, googleSignIn, signIn }}>
       {children}
     </UserContext.Provider>
   );

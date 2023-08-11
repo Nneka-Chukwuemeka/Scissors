@@ -17,6 +17,8 @@ const layout = ({ children, pageProps }) => {
 					<main className="app">{children}</main>
 				</AuthContextProvider>
 			
+			
+				
 			</body>
 		</html>
 	);

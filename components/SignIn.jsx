@@ -5,19 +5,17 @@ import { useState } from 'react';
 import {UserAuth} from '@/context/Authcontext'
 import { useRouter } from 'next/navigation';
 
-
 const SignIn = ({ type }) => {
 	const [email, setEmail] = useState('');
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 	const [error, setError] = useState(null);
 	const router = useRouter();
-	const { createUser } = UserAuth();
-
+	const { createemailUser, googleSignIn } = UserAuth();
 	const handleSubmit = async (event) => {
 			event.preventDefault();  
 			try{
-				await createUser(email,password);
+				await  createemailUser(email,password);
 				router.push('/login')
 				}catch(e){
 				  setError(e.message)
@@ -25,15 +23,23 @@ const SignIn = ({ type }) => {
 				}
 	};
 
+   const handlegooglesignin= async ()=>{
+	try {
+		await googleSignIn();
+		router.push('/dashboard')  
+	  } catch (error) {
+		console.log(error);
+	  }
+   }
 	return (
 		<section className="pt-10 flex flex-col md:justify-center px-7 md:w-[560px] md:mx-auto mb-10">
 			<h3 className="pb-4 text-center text-bold">
 				{type ? type : 'Sign Up with'}
 			</h3>
-			<div className="flex flex-col py-3 gap-3 w-full md:flex-row md:gap-10  md:justify-center">
+			<div className="flex flex-col py-3 gap-3 w-full md:flex-row md:gap-10  md:justify-center"> 
 
 		
-				<Button className=" w-full md:w-[50%] rounded-[12px]">
+				<Button onClick={handlegooglesignin}  className=" w-full md:w-[50%] rounded-[12px]">
 					Google
 				</Button>
 				<Button className="rounded-[10px] w-full md:w-[50%] ">

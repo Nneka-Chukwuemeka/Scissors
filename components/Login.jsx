@@ -17,7 +17,7 @@ export default function Login() {
 			setError('')
 			try {
 			  await signIn(email, password)
-			  router.push('/dashboard')
+			  router.push('/dashboard')  
 			} catch (e) {
 			  setError(e.message)
 			  console.log(e.message)
