@@ -64,7 +64,7 @@ export default function Login() {
 							onChange={(e) => setPassword(e.target.value)}
 						/>
 					</div>
-					<div className=' text-center'>Don't have an account yet?<Link  	href="/sign-up" className=' underline'>  Sign Up</Link></div>
+					<div className=' text-center'>Don&apos;t have an account yet?<Link  	href="/sign-up" className=' underline'>  Sign Up</Link></div>
 					<Button
 					   onSubmit={handleSubmit}
 						className="flex justify-center items-center"
