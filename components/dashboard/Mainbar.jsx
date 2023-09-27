@@ -123,7 +123,7 @@ export default function Mainbar() {
 				<div className="form-group w-full">
         <div
                 onClick={handlecreateshortlink}
-                className=' text-black rounded-full ml-[17rem] lg:ml-[22rem] md:ml-[45rem] w-[20%] relative top-[-1.9rem]  p-3 cursor-pointer'
+                className=' text-black rounded-full ml-[17rem] xl:ml-[30rem] xl:top-[-3.4rem] lg:ml-[22rem] md:ml-[45rem] w-[20%] relative top-[-1.9rem]  p-3 cursor-pointer'
               >
                 <AiOutlineClose  size={25} />
 
