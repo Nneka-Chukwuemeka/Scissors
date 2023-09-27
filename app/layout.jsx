@@ -1,4 +1,4 @@
-'use client';
+
 import '@/styles/global.css';
 import React from 'react';
 import {AuthContextProvider} from '../context/Authcontext'
