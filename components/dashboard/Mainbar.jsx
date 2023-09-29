@@ -14,9 +14,11 @@ export default function Mainbar() {
   const router = useRouter();
   const { emailuser, logout } = UserAuth();
   const [userprofile, Setuserprofile]=useState(false);
+  const [longURL, setLongURL] = useState('https://www.longurl.com');
   const [createshortlink, Setcreateshortlink ]=useState(false);
-  const [createshortlinkbtn, Setcreateshortlinkbtn ]=useState(false);
-
+  const [shortenedURL, setShortenedURL] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const Userprofilefn=()=>{
  Setuserprofile(!userprofile);
   }
@@ -25,9 +27,40 @@ export default function Mainbar() {
 		event.preventDefault();  
 	}
 
-  const handlecreateshortlink=()=>{
-   Setcreateshortlink(!createshortlink); 
-  }
+  const handlecreateshortlink = async () => {
+    try {
+      const bitlyAccessToken = '0c875b74dbc0954ef1cfaef37463133b6677501c'; // Replace with your Bitly access token
+      const bitlyShortenUrl = 'https://api-ssl.bitly.com/v4/shorten';
+
+      setLoading(true);
+      setError('');
+
+      const response = await fetch(bitlyShortenUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${bitlyAccessToken}`,
+        },
+        body: JSON.stringify({
+          long_url: longURL,
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setShortenedURL(data.link);
+      } else {
+        setError('Failed to shorten URL. Please try again.');
+      }
+    } catch (error) {
+      setError('An error occurred while processing your request.');
+    } finally {
+      setLoading(false);
+    }
+  };
+  const DisplayPopup=()=>{
+    Setcreateshortlink(!createshortlink); 
+   }
   const handleLogout = async () => {
     try {
       await logout();
@@ -103,14 +136,14 @@ export default function Mainbar() {
       <div className='mt-14'>
         <div>
 
-        <p className=' text-6xl relative   md:left md:text-left md:w-[50%] md:p-16 pb-6  '>Short Your Loooooog Links :) </p>
+        <p className=' text-6xl relative   md:left md:text-left md:w-[50%] md:p-16 pb-6  '>Shorten Your Long Links :) </p>
          
         <h1 className=' md:text-lg md:font-medium md:text-left md:w-[60%] relative md:ml-16 pb-2  '> Personalize your shortened URLs to align with your brand identity.
           Utilize custom slugs, branded links, and domain customization options to
           reinforce your brand presence and enhance user engagement.
           </h1>
           <button
-           onClick={handlecreateshortlink}
+           onClick={DisplayPopup}
           className=' px-6 py-2 my-2 md:mr-[32rem] rounded-3xl lg:mr-[45rem] xl:mr-[60rem]  relative bg-[#0065FE] text-white'
         >
           Create Short Link
@@ -122,20 +155,20 @@ export default function Mainbar() {
 				<form onSubmit={handlesummit} className="flex flex-col gap-[1rem]">
 				<div className="form-group w-full">
         <div
-                onClick={handlecreateshortlink}
+                onClick={DisplayPopup}
                 className=' text-black rounded-full ml-[17rem] xl:ml-[30rem] xl:top-[-3.4rem] lg:ml-[22rem] md:ml-[45rem] w-[20%] relative top-[-1.9rem]  p-3 cursor-pointer'
               >
                 <AiOutlineClose  size={25} />
 
               </div>
 					<input 
-						type="text"
+						type='text'
 						placeholder="Paste your URL"
-					     value=''
-						className="input rounded-[6px] border-primary border w-full py-[0.3rem] px-[0.75rem]"
+               onChange={(e) => setLongURL(e.target.value)}
+						className="input rounded-[6px] text-black border-primary border w-full py-[0.3rem] px-[0.75rem]"
 					/>
 				</div>
-				<div className="dropdown flex gap-[0.7rem] justify-between relative">
+				{/* <div className="dropdown flex gap-[0.7rem] justify-between relative">
 					<select className="input text-primary h-[3.4375rem]">
 						<option defaultValue="Custom domain">
 							Choose Domain
@@ -147,8 +180,16 @@ export default function Mainbar() {
 						placeholder="Type Alias here"
 						value=""
 					/>
-				</div>
-				<Button className="flex justify-center items-center">
+				</div> */}
+          {shortenedURL && (
+          <div className='mt-4 text-black'>
+            <p className='text-lg font-semibold'>Shortened URL:</p>
+            <a href={shortenedURL} target='_blank' rel='noopener noreferrer' className='text-blue-500'>
+            {shortenedURL}
+            </a>
+          </div>
+        )}
+				<Button onClick={handlecreateshortlink} className="flex justify-center items-center">
 					Trim Url <LiaCutSolid />
 				</Button>
 			</form>
