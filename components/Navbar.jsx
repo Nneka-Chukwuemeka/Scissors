@@ -39,7 +39,7 @@ export default function Navbar() {
 					</li>
 
 					<li className="">
-						<Link href='/Pricingplan' >pricing</Link>
+						<Link href='/Pricingplan' >Pricing</Link>
 					</li>
 					<li>
 						<Link href="/">Anayltics</Link>
@@ -56,9 +56,9 @@ export default function Navbar() {
 						</button>
 					</ul>  
 				) : (
-					<ul className=" flex px-12  space-x-8">
+					<ul className=" flex justify-between items-center px-12 text-base  space-x-8">
 						<Link href='/login'>
-						<button>Login</button>
+						<button className=' text-xl'>Login</button>
 						</Link>
 		
 						<Link

@@ -14,7 +14,7 @@ export default function Mainbar() {
   const router = useRouter();
   const { emailuser, logout } = UserAuth();
   const [userprofile, Setuserprofile]=useState(false);
-  const [longURL, setLongURL] = useState('https://www.longurl.com');
+  const [longURL, setLongURL] = useState('');
   const [createshortlink, Setcreateshortlink ]=useState(false);
   const [shortenedURL, setShortenedURL] = useState('');
   const [loading, setLoading] = useState(false);
@@ -83,9 +83,9 @@ export default function Mainbar() {
   return (
     <div className='text-center text-white bg-slate-600  w-full h-screen   '>
 
-      <section className=' flex flex-row items-center justify-between pt-4 '>
+      <ul className=' flex justify-between space-x-10 items-center pt-4 '>
          <Image className='' src={Logo} alt='/' height={50} width={120} />
-         <div className=' bg-black  py-3 p-4 rounded-full shadow-sm hover:shadow-md transition cursor-pointer          
+         <div className=' bg-black py-3 p-4 rounded-full shadow-sm hover:shadow-md transition cursor-pointer          
          '>
           <div className=' flex items-center space-x-2'>
           <Image className= ' border-neutral-200 cursor-pointer hover:shadow-md transition rounded-full' src={avater} alt='/' height={50} width={30} />
@@ -97,7 +97,7 @@ export default function Mainbar() {
           </div>
          
         </div>
-      </section>
+      </ul>
 
  <div
  
